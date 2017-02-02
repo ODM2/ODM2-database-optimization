@@ -1,3 +1,4 @@
+
 CREATE VIEW timeseriesresultvaluesextwannotations AS 
  SELECT tsrv.valueid,
     tsrv.datavalue,
