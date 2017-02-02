@@ -2,7 +2,7 @@
 
 -- DROP VIEW odm2extra.timeseriesresultvaluesextwannotations;
 
-CREATE OR REPLACE VIEW odm2extra.timeseriesresultvaluesextwannotations AS 
+CREATE MATERIALIZED VIEW odm2extra.timeseriesresultvaluesextwannotations AS 
  SELECT tsrv.valueid,
     tsrv.datavalue,
     tsrv.valuedatetime,
@@ -32,7 +32,4 @@ CREATE OR REPLACE VIEW odm2extra.timeseriesresultvaluesextwannotations AS
     odm2.cv_aggregationstatistic
   WHERE tsrv.resultid = timeseriesresults.resultid AND timeseriesresults.resultid = results.resultid AND timeseriesresults.aggregationstatisticcv::text = cv_aggregationstatistic.name::text AND results.featureactionid = featureactions.featureactionid AND results.processinglevelid = processinglevels.processinglevelid AND results.variableid = variables.variableid AND results.unitsid = units.unitsid AND featureactions.samplingfeatureid = samplingfeatures.samplingfeatureid
   ORDER BY tsrv.datavalue DESC;
-
-ALTER TABLE odm2extra.timeseriesresultvaluesextwannotations
-  OWNER TO postgres;
 

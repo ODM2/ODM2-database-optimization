@@ -1,8 +1,8 @@
 -- View: odm2extra.timeseriesresultvaluesext
 
--- DROP VIEW odm2extra.timeseriesresultvaluesext;
+-- DROP MATERIALIZED VIEW odm2extra.timeseriesresultvaluesext;
 
-CREATE OR REPLACE VIEW odm2extra.timeseriesresultvaluesext AS 
+CREATE MATERIALIZED VIEW odm2extra.timeseriesresultvaluesext AS 
  SELECT timeseriesresultvalues.valueid,
     timeseriesresultvalues.datavalue,
     timeseriesresultvalues.valuedatetime,
